@@ -12,6 +12,10 @@
 		2B0C6DA8228FDEEA00CA40BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C6DA6228FDEEA00CA40BD /* LaunchScreen.storyboard */; };
 		2B0C6DB3228FDEEA00CA40BD /* denTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6DB2228FDEEA00CA40BD /* denTests.swift */; };
 		2B0C6DBE228FDEEA00CA40BD /* denUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6DBD228FDEEA00CA40BD /* denUITests.swift */; };
+		2B8802172294771B00EBC3F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8802162294771B00EBC3F4 /* Main.storyboard */; };
+		2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880219229477E000EBC3F4 /* SpinVC.swift */; };
+		2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */; };
+		2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		2B0C6DB9228FDEEA00CA40BD /* denUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = denUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0C6DBD228FDEEA00CA40BD /* denUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = denUITests.swift; sourceTree = "<group>"; };
 		2B0C6DBF228FDEEA00CA40BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B8802162294771B00EBC3F4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2B880219229477E000EBC3F4 /* SpinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinVC.swift; sourceTree = "<group>"; };
+		2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransformLayer+Rotation.swift"; sourceTree = "<group>"; };
+		2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+fit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +101,13 @@
 		2B0C6D9C228FDEEA00CA40BD /* den */ = {
 			isa = PBXGroup;
 			children = (
+				2BAF20E022959E9400CFC04E /* CA_utils */,
+				2B880218229477C900EBC3F4 /* Spin */,
 				2B0C6D9D228FDEEA00CA40BD /* AppDelegate.swift */,
 				2B0C6DA4228FDEEA00CA40BD /* Assets.xcassets */,
 				2B0C6DA6228FDEEA00CA40BD /* LaunchScreen.storyboard */,
 				2B0C6DA9228FDEEA00CA40BD /* Info.plist */,
+				2B8802162294771B00EBC3F4 /* Main.storyboard */,
 			);
 			path = den;
 			sourceTree = "<group>";
@@ -117,6 +128,23 @@
 				2B0C6DBF228FDEEA00CA40BD /* Info.plist */,
 			);
 			path = denUITests;
+			sourceTree = "<group>";
+		};
+		2B880218229477C900EBC3F4 /* Spin */ = {
+			isa = PBXGroup;
+			children = (
+				2B880219229477E000EBC3F4 /* SpinVC.swift */,
+			);
+			path = Spin;
+			sourceTree = "<group>";
+		};
+		2BAF20E022959E9400CFC04E /* CA_utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */,
+				2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */,
+			);
+			path = CA_utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8802172294771B00EBC3F4 /* Main.storyboard in Resources */,
 				2B0C6DA8228FDEEA00CA40BD /* LaunchScreen.storyboard in Resources */,
 				2B0C6DA5228FDEEA00CA40BD /* Assets.xcassets in Resources */,
 			);
@@ -249,7 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
+				2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */,
+				2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
