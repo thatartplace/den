@@ -20,11 +20,17 @@ class SpinVC: UIViewController {
                                        onAxis: (1, 0, 0),
                                        duration: 3,
                                        repeatCount: .infinity)
+        let rotateZ = CATransformLayer(rotatingFrom: 0,
+                                       rotatingTo: 2 * CGFloat.pi,
+                                       onAxis: (0, 0, 1),
+                                       duration: 4,
+                                       repeatCount: .infinity)
         
         view.layer.addSublayer(trLayer)
         trLayer.addSublayer(rotateY)
         rotateY.addSublayer(rotateX)
-        rotateX.addSublayer(shLayer)
+        rotateX.addSublayer(rotateZ)
+        rotateZ.addSublayer(shLayer)
         
         shLayer.lineWidth = 3
         shLayer.strokeColor = UIColor.cyan.cgColor
