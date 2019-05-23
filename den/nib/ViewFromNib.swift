@@ -14,13 +14,13 @@ class ViewFromNib: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        Bundle.main.loadNibNamed("ViewFromNib", owner: self, options: nil)
+        UINib(nibName: "ViewFromNib", bundle: nil).instantiate(withOwner: self, options: nil)
         self.addSubview(content)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        Bundle.main.loadNibNamed("ViewFromNib", owner: self, options: nil)
+        UINib(nibName: "ViewFromNib", bundle: nil).instantiate(withOwner: self, options: nil)
         self.addSubview(content)
     }
 }
