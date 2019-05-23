@@ -16,8 +16,6 @@
 		2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880219229477E000EBC3F4 /* SpinVC.swift */; };
 		2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */; };
 		2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */; };
-		2BAF20EB2295CE5B00CFC04E /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20EA2295CE5B00CFC04E /* CardsViewController.swift */; };
-		2BAF20ED2295D6F600CFC04E /* CardsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20EC2295D6F600CFC04E /* CardsViewLayout.swift */; };
 		2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */; };
 		2BAF20F22295E22C00CFC04E /* ViewFromNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAF20F12295E22C00CFC04E /* ViewFromNib.xib */; };
 		2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */; };
@@ -56,8 +54,6 @@
 		2B880219229477E000EBC3F4 /* SpinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinVC.swift; sourceTree = "<group>"; };
 		2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransformLayer+Rotation.swift"; sourceTree = "<group>"; };
 		2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+fit.swift"; sourceTree = "<group>"; };
-		2BAF20EA2295CE5B00CFC04E /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
-		2BAF20EC2295D6F600CFC04E /* CardsViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewLayout.swift; sourceTree = "<group>"; };
 		2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNib.swift; sourceTree = "<group>"; };
 		2BAF20F12295E22C00CFC04E /* ViewFromNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewFromNib.xib; sourceTree = "<group>"; };
 		2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNibViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +107,8 @@
 		2B0C6D9C228FDEEA00CA40BD /* den */ = {
 			isa = PBXGroup;
 			children = (
+				2B51295F22A371D5007E824E /* repeat_utils */,
 				2BAF20EE2295E1FA00CFC04E /* nib */,
-				2BAF20E92295CDF600CFC04E /* Cards */,
 				2BAF20E022959E9400CFC04E /* CA_utils */,
 				2B880218229477C900EBC3F4 /* Spin */,
 				2B0C6D9D228FDEEA00CA40BD /* AppDelegate.swift */,
@@ -142,6 +138,13 @@
 			path = denUITests;
 			sourceTree = "<group>";
 		};
+		2B51295F22A371D5007E824E /* repeat_utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repeat_utils;
+			sourceTree = "<group>";
+		};
 		2B880218229477C900EBC3F4 /* Spin */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,15 +160,6 @@
 				2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */,
 			);
 			path = CA_utils;
-			sourceTree = "<group>";
-		};
-		2BAF20E92295CDF600CFC04E /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				2BAF20EA2295CE5B00CFC04E /* CardsViewController.swift */,
-				2BAF20EC2295D6F600CFC04E /* CardsViewLayout.swift */,
-			);
-			path = Cards;
 			sourceTree = "<group>";
 		};
 		2BAF20EE2295E1FA00CFC04E /* nib */ = {
@@ -314,8 +308,6 @@
 				2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */,
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
-				2BAF20ED2295D6F600CFC04E /* CardsViewLayout.swift in Sources */,
-				2BAF20EB2295CE5B00CFC04E /* CardsViewController.swift in Sources */,
 				2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */,
 				2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */,
 			);
