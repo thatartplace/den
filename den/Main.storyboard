@@ -154,7 +154,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="JvB-oh-pX8"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jOY-mD-Nmu">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardsCollectionViewCell" id="jOY-mD-Nmu">
                                         <rect key="frame" x="0.5" y="0.0" width="413" height="191"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -175,6 +175,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OnU-Cu-9mz"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ZuP-Vw-MN4" id="2dQ-ai-Xda"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqf-c6-54o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
