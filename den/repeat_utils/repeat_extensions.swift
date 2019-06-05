@@ -7,6 +7,14 @@ extension Collection {
         return self.reduce(.zero) { $0 + repeated($1) }
     }
     
+    func map<Item>(_ repeated: (Element) -> Item?) -> [Item] {
+        return self.reduce(into: []) { a, e in
+            if let item = repeated(e) {
+                a.append(item)
+            }
+        }
+    }
+    
     func till(_ stop: (Element) -> Bool) -> Element? {
         for e in self {
             if stop(e) {
