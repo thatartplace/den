@@ -24,6 +24,7 @@
 		2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */; };
 		2BAF20F22295E22C00CFC04E /* ViewFromNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAF20F12295E22C00CFC04E /* ViewFromNib.xib */; };
 		2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */; };
+		2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB225122A8150200ACD21D /* CardsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNib.swift; sourceTree = "<group>"; };
 		2BAF20F12295E22C00CFC04E /* ViewFromNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewFromNib.xib; sourceTree = "<group>"; };
 		2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNibViewController.swift; sourceTree = "<group>"; };
+		2BDB225122A8150200ACD21D /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			children = (
 				2B51296A22A37CE1007E824E /* CardsViewController.swift */,
 				2B51296C22A37D07007E824E /* CardsLayout.swift */,
+				2BDB225122A8150200ACD21D /* CardsCell.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
 				2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */,
+				2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */,
 				2B51296622A37ABE007E824E /* ++--.swift in Sources */,
 				2B51296D22A37D07007E824E /* CardsLayout.swift in Sources */,
 				2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */,

@@ -52,23 +52,28 @@ class CardsLayout: UICollectionViewLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var springDistance: CGFloat?
         let inRect = invariants.filter { invariant in
-            if invariant.stackedHeight < rect.origin.y {
+            if invariant.stackedHeight < rect.minY {
                 return false
             }
             else {
                 springDistance ?= invariant.stackedHeight - rect.origin.y
             }
-            if invariant.stackedHeight > rect.origin.y + rect.height + invariant.exposedHeight {
+            if invariant.stackedHeight > rect.maxY + invariant.exposedHeight {
                 return false
             }
             return true
         }
+        print("in rect: \(inRect.enumerated().map { $0.1.zIndex })")
         return inRect.enumerated().map { i, invariant in
             let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: i, section: 0))
-            attributes.frame = CGRect(origin: CGPoint(x: 0, y: invariant.stackedHeight - invariant.exposedHeight),
-                                      size: invariant.size)
+            let origin = CGPoint(x: 0, y: invariant.stackedHeight - invariant.exposedHeight)
+            attributes.frame = CGRect(origin: origin, size: invariant.size)
             attributes.zIndex = invariant.zIndex
             return attributes
         }
+    }
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
     }
 }
