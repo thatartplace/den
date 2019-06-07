@@ -9,7 +9,6 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.collectionViewLayout = CardsLayout(dataSource: self)
-        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
     }
 }
 

@@ -7,16 +7,21 @@ protocol CardsLayoutDataSource: AnyObject {
     func heightForCell(at: IndexPath) -> CGFloat
 }
 
-struct CellAttributesInvariants {
+struct CellInvariants {
     var size: CGSize
     var exposedHeight: CGFloat
     var stackedHeight: CGFloat
     var index: Int
+    
+    var stackedBase: CGFloat {
+        return stackedHeight - exposedHeight
+    }
 }
 
 class CardsLayout: UICollectionViewLayout {
     weak var dataSource: CardsLayoutDataSource!
-    var invariants: [CellAttributesInvariants] = []
+    var invariants: [CellInvariants] = []
+    var contentSize = CGSize.zero
     
     convenience init(dataSource: CardsLayoutDataSource) {
         self.init()
@@ -25,7 +30,7 @@ class CardsLayout: UICollectionViewLayout {
     
     var cView: UICollectionView {
         guard let collectionView = collectionView else {
-            preconditionFailure("collectionView needs to be non nil")
+            preconditionFailure("calling layout methods before collectionView is set")
         }
         return collectionView
     }
@@ -38,34 +43,36 @@ class CardsLayout: UICollectionViewLayout {
             let height = dataSource.heightForCell(at: indexPath)
             let exposed = dataSource.exposedHeightForCell(at: indexPath)
             stackedHeight += exposed
-            return CellAttributesInvariants(size: CGSize(width: cView.bounds.width, height: height),
+            return CellInvariants(size: CGSize(width: cView.bounds.width, height: height),
                                             exposedHeight: exposed,
                                             stackedHeight: stackedHeight,
                                             index: indexPath.item)
         }
+        contentSize = CGSize(width: cView.bounds.width, height: stackedHeight)
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: cView.bounds.width, height: invariants.last?.stackedHeight ?? 0)
+        return contentSize
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let minY = cView.contentOffset.y
+        let maxY = cView.contentOffset.y + contentSize.height
         var springDistance: CGFloat?
         let inRect = invariants.filter { invariant in
-            if invariant.stackedHeight < rect.minY {
+            let top = invariant.stackedBase
+            let bottom = invariant.stackedHeight
+            if max(top, bottom, minY) == minY || min(top, bottom, maxY) == maxY {
                 return false
             }
             else {
-                springDistance ?= invariant.stackedHeight - rect.minY
-            }
-            if invariant.stackedHeight > rect.maxY + invariant.exposedHeight {
-                return false
+                springDistance ?= top - minY
             }
             return true
         }
         return inRect.map { invariant in
             let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: invariant.index, section: 0))
-            let origin = CGPoint(x: 0, y: invariant.stackedHeight - invariant.exposedHeight)
+            let origin = CGPoint(x: 0, y: max(invariant.stackedBase, minY))
             attributes.frame = CGRect(origin: origin, size: invariant.size)
             attributes.zIndex = invariant.index
             return attributes

@@ -14,15 +14,6 @@ extension Collection {
             }
         }
     }
-    
-    func till(_ stop: (Element) -> Bool) -> Element? {
-        for e in self {
-            if stop(e) {
-                return e
-            }
-        }
-        return nil
-    }
 }
 
 extension Collection where Element: AdditiveArithmetic {
