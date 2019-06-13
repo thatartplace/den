@@ -23,6 +23,7 @@ extension Collection where Element: AdditiveArithmetic {
 }
 
 extension Int {
+    @discardableResult
     func times<Item>(_ repeated: (Int) -> Item) -> [Item] {
         let to = self > 0 ? self : 0
         return (0..<to).map(repeated)

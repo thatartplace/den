@@ -22,6 +22,7 @@ class CardsLayout: UICollectionViewLayout {
     weak var dataSource: CardsLayoutDataSource!
     var invariants: [CellInvariants] = []
     var contentSize = CGSize.zero
+    var compressEffectRange: CGFloat = 0
     
     convenience init(dataSource: CardsLayoutDataSource) {
         self.init()
@@ -33,6 +34,14 @@ class CardsLayout: UICollectionViewLayout {
             preconditionFailure("calling layout methods before collectionView is set")
         }
         return collectionView
+    }
+    
+    var minY: CGFloat {
+        return cView.contentOffset.y
+    }
+    
+    var maxY: CGFloat {
+        return cView.contentOffset.y + contentSize.height
     }
     
     override func prepare() {
@@ -56,27 +65,21 @@ class CardsLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let minY = cView.contentOffset.y
-        let maxY = cView.contentOffset.y + contentSize.height
-        var springDistance: CGFloat?
         let inRect = invariants.filter { invariant in
             let top = invariant.stackedBase
             let bottom = invariant.stackedHeight
-            if max(top, bottom, minY) == minY || min(top, bottom, maxY) == maxY {
-                return false
-            }
-            else {
-                springDistance ?= top - minY
-            }
-            return true
+            return max(top, bottom, minY) != minY && min(top, bottom, maxY) != maxY
         }
-        return inRect.map { invariant in
-            let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: invariant.index, section: 0))
-            let origin = CGPoint(x: 0, y: max(invariant.stackedBase, minY))
-            attributes.frame = CGRect(origin: origin, size: invariant.size)
-            attributes.zIndex = invariant.index
-            return attributes
-        }
+        return inRect.map(attributesForCell)
+    }
+    
+    func attributesForCell(invariant: CellInvariants) -> UICollectionViewLayoutAttributes {
+        let offset = max(0, invariant.stackedBase - minY)
+        let inRange = compressEffectRange - offset
+        let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: invariant.index, section: 0))
+        attributes.zIndex = invariant.index
+        
+        return attributes
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
