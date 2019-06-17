@@ -10,10 +10,10 @@ class ImageBitmap<Pixel>: Bitmap2D {
     let height: Int
     private let free: Bool
     
-    init(using data: NSData?, width: Int, height: Int) {
-        if let bytes = UnsafeMutableRawPointer(mutating: data?.bytes) {
+    init(using data: inout Data?, width: Int, height: Int) {
+        if let base = data?.withUnsafeMutableBytes({ $0.baseAddress }) as UnsafeMutableRawPointer? {
             free = false
-            pixels = bytes.assumingMemoryBound(to: Pixel.self)
+            pixels = base.assumingMemoryBound(to: Pixel.self)
         }
         else {
             free = true
