@@ -5,30 +5,33 @@ import UIKit
 class ImageBitmap<Pixel>: Bitmap2D {
     typealias Value = Pixel
     
-    private let pixels: UnsafeMutableBufferPointer<Pixel>
+    private let pixels: UnsafeMutablePointer<Pixel>
     let width: Int
     let height: Int
     private let free: Bool
     
-    init(using data: inout Data, width: Int, height: Int) {
-        free = false
-        pixels = data.withUnsafeMutableBytes { $0.bindMemory(to: Pixel.self) }
+    init(using data: NSData?, width: Int, height: Int) {
+        if let bytes = UnsafeMutableRawPointer(mutating: data?.bytes) {
+            free = false
+            pixels = bytes.assumingMemoryBound(to: Pixel.self)
+        }
+        else {
+            free = true
+            pixels = .allocate(capacity: MemoryLayout<Pixel>.size * width * height)
+        }
         self.width = width
         self.height = height
     }
     
     init(convertFrom image: CGImage, bytesPerRow: Int, format: CIFormat, space: CGColorSpace) {
         let context = CIContext(options: [
-            CIContextOption.outputColorSpace: space,
+            CIContextOption.workingColorSpace: space,
             CIContextOption.outputPremultiplied: false
         ])
         free = true
         pixels = .allocate(capacity: bytesPerRow * image.height)
-        guard let base = pixels.baseAddress else {
-            preconditionFailure("can't allocate buffer for conversion")
-        }
         context.render(CIImage(cgImage: image),
-                       toBitmap: base,
+                       toBitmap: pixels,
                        rowBytes: bytesPerRow,
                        bounds: CGRect(x: 0, y: 0, width: image.width, height: image.height),
                        format: format,

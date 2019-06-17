@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0B1F1822B7C7F90088514F /* ImageFramingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0B1F1722B7C7F90088514F /* ImageFramingVC.swift */; };
 		2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6D9D228FDEEA00CA40BD /* AppDelegate.swift */; };
 		2B0C6DA5228FDEEA00CA40BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C6DA4228FDEEA00CA40BD /* Assets.xcassets */; };
 		2B0C6DA8228FDEEA00CA40BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C6DA6228FDEEA00CA40BD /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0B1F1722B7C7F90088514F /* ImageFramingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFramingVC.swift; sourceTree = "<group>"; };
 		2B0C6D9A228FDEEA00CA40BD /* den.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = den.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0C6D9D228FDEEA00CA40BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B0C6DA4228FDEEA00CA40BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				2B56899622B29FD900EF2E31 /* ImageFramingView.swift */,
+				2B0B1F1722B7C7F90088514F /* ImageFramingVC.swift */,
 				2B56899822B2A14D00EF2E31 /* ImageFramingOptions.swift */,
 				2B56899A22B2A91800EF2E31 /* Bitmap.swift */,
 				2B56899C22B2A93400EF2E31 /* ImageBitmap.swift */,
@@ -382,6 +385,7 @@
 				2B51296322A372CE007E824E /* repeat_extensions.swift in Sources */,
 				2B56899B22B2A91800EF2E31 /* Bitmap.swift in Sources */,
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
+				2B0B1F1822B7C7F90088514F /* ImageFramingVC.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
 				2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */,
 				2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */,

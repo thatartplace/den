@@ -3,20 +3,29 @@
 import UIKit
 
 class ImageFramingView: UIView {
-    private var imageView = UIImageView(image: nil)
-    var bitmap: ImageBitmap<RGBA32BigPixel>?
+    private var imageView: UIImageView!
+    private var bitmap: ImageBitmap<RGBA32BigPixel>?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        addSubview(imageView)
+        initSubviews()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initSubviews()
+    }
+    
+    func initSubviews() {
+        imageView = UIImageView(image: nil)
+        imageView.contentMode = .center
         addSubview(imageView)
     }
     
     override func layoutSubviews() {
+        if let imageFrame = imageFrame(position: position) {
+            imageView.frame = imageFrame
+        }
     }
     
     func imageFrame(position: ImageFramingPosition) -> CGRect? {
