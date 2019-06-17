@@ -85,7 +85,7 @@ class ImageFramingView: UIView {
         guard let space = CGColorSpace(name: CGColorSpace.sRGB) else {
             preconditionFailure("can't create system defined color space")
         }
-        return ImageBitmap(convertFrom: image, bytesPerRow: image.width * 4, format: .RGBA8, space: space)
+        return ImageBitmap(convertFrom: image, format: .RGBA8, space: space)
     }
     
     func reColor(background: ImageFramingBackground) {
