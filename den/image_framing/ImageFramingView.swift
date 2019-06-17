@@ -18,53 +18,48 @@ class ImageFramingView: UIView {
     
     func initSubviews() {
         imageView = UIImageView(image: nil)
-        imageView.contentMode = .center
+        imageView.contentMode = .scaleAspectFit
         addSubview(imageView)
     }
     
     override func layoutSubviews() {
-        if let imageFrame = imageFrame(position: position) {
-            imageView.frame = imageFrame
-        }
+        reframeImage(position: position)
     }
     
-    func imageFrame(position: ImageFramingPosition) -> CGRect? {
+    func reframeImage(position: ImageFramingPosition) {
         guard let bitmap = bitmap else {
-            return nil
+            return
         }
-        let imageSize = fitRect(CGSize(width: bitmap.width, height: bitmap.height), in: bounds.size)
+        let defaultSize = CGSize(width: bitmap.width, height: bitmap.height)
+        let newSize = fitRect(defaultSize, in: bounds.size)
         var origin = CGPoint(x: 0, y: 0)
-        let centerOriginX = (bounds.width - imageSize.width) / 2
-        let centerOriginY = (bounds.height - imageSize.height) / 2
+        let centerOriginX = (bounds.width - newSize.width) / 2
+        let centerOriginY = (bounds.height - newSize.height) / 2
         switch position {
         case .top:
             origin = CGPoint(x: centerOriginX, y: 0)
         case .left:
             origin = CGPoint(x: 0, y: centerOriginY)
         case .bottom:
-            origin = CGPoint(x: centerOriginX, y: bounds.height - imageSize.height)
+            origin = CGPoint(x: centerOriginX, y: bounds.height - newSize.height)
         case .right:
-            origin = CGPoint(x: bounds.width - imageSize.width, y: centerOriginY)
+            origin = CGPoint(x: bounds.width - newSize.width, y: centerOriginY)
         case .center:
             origin = CGPoint(x: centerOriginX, y: centerOriginY)
         }
-        return CGRect(origin: origin, size: imageSize)
+        imageView.frame = CGRect(origin: origin, size: newSize)
     }
     
     func fitRect(_ rect: CGSize, in container: CGSize) -> CGSize {
-        let max = min(container.width, container.height)
-        let ratio = rect.width / rect.height
-        if rect.width > rect.height {
-            return CGSize(width: max, height: max / ratio)
-        }
-        else {
-            return CGSize(width: max * ratio, height: max)
-        }
+        let wRatio = container.width / rect.width
+        let hRatio = container.height / rect.height
+        let scale = min(hRatio, wRatio)
+        return CGSize(width: rect.width * scale, height: rect.height * scale)
     }
     
     var background = ImageFramingBackground.borderColorMode {
         didSet {
-            reColor()
+            reColor(background: background)
         }
     }
     
@@ -81,7 +76,8 @@ class ImageFramingView: UIView {
         set {
             imageView.image = newValue
             bitmap = newValue?.cgImage != nil ? convertImage(newValue!.cgImage!) : nil
-            reColor()
+            reColor(background: background)
+            reframeImage(position: position)
         }
     }
     
@@ -92,7 +88,7 @@ class ImageFramingView: UIView {
         return ImageBitmap(convertFrom: image, bytesPerRow: image.width * 4, format: .RGBA8, space: space)
     }
     
-    func reColor() {
+    func reColor(background: ImageFramingBackground) {
         switch background {
         case let .color(color):
             backgroundColor = color
