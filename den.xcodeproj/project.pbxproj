@@ -17,6 +17,11 @@
 		2B51296622A37ABE007E824E /* ++--.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296522A37ABD007E824E /* ++--.swift */; };
 		2B51296B22A37CE1007E824E /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296A22A37CE1007E824E /* CardsViewController.swift */; };
 		2B51296D22A37D07007E824E /* CardsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296C22A37D07007E824E /* CardsLayout.swift */; };
+		2B56899722B29FD900EF2E31 /* ImageFramingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899622B29FD900EF2E31 /* ImageFramingView.swift */; };
+		2B56899922B2A14D00EF2E31 /* ImageFramingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899822B2A14D00EF2E31 /* ImageFramingOptions.swift */; };
+		2B56899B22B2A91800EF2E31 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899A22B2A91800EF2E31 /* Bitmap.swift */; };
+		2B56899D22B2A93400EF2E31 /* ImageBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899C22B2A93400EF2E31 /* ImageBitmap.swift */; };
+		2B56899F22B2A95200EF2E31 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899E22B2A95200EF2E31 /* Pixel.swift */; };
 		2B81543F22AAC1EC006063B4 /* CGFloat_coercion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */; };
 		2B8802172294771B00EBC3F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8802162294771B00EBC3F4 /* Main.storyboard */; };
 		2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880219229477E000EBC3F4 /* SpinVC.swift */; };
@@ -63,6 +68,11 @@
 		2B51296522A37ABD007E824E /* ++--.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "++--.swift"; sourceTree = "<group>"; };
 		2B51296A22A37CE1007E824E /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		2B51296C22A37D07007E824E /* CardsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsLayout.swift; sourceTree = "<group>"; };
+		2B56899622B29FD900EF2E31 /* ImageFramingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFramingView.swift; sourceTree = "<group>"; };
+		2B56899822B2A14D00EF2E31 /* ImageFramingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFramingOptions.swift; sourceTree = "<group>"; };
+		2B56899A22B2A91800EF2E31 /* Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
+		2B56899C22B2A93400EF2E31 /* ImageBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBitmap.swift; sourceTree = "<group>"; };
+		2B56899E22B2A95200EF2E31 /* Pixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat_coercion.swift; sourceTree = "<group>"; };
 		2B8802162294771B00EBC3F4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2B880219229477E000EBC3F4 /* SpinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinVC.swift; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 		2B0C6D9C228FDEEA00CA40BD /* den */ = {
 			isa = PBXGroup;
 			children = (
+				2B56899522B29FA300EF2E31 /* image_framing */,
 				2BD271CD22AE8DA2000291A3 /* SFSafariViewController */,
 				2B51296922A37CBE007E824E /* Cards */,
 				2B51296422A37AA2007E824E /* operators */,
@@ -183,6 +194,18 @@
 				2BDB225122A8150200ACD21D /* CardsCell.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		2B56899522B29FA300EF2E31 /* image_framing */ = {
+			isa = PBXGroup;
+			children = (
+				2B56899622B29FD900EF2E31 /* ImageFramingView.swift */,
+				2B56899822B2A14D00EF2E31 /* ImageFramingOptions.swift */,
+				2B56899A22B2A91800EF2E31 /* Bitmap.swift */,
+				2B56899C22B2A93400EF2E31 /* ImageBitmap.swift */,
+				2B56899E22B2A95200EF2E31 /* Pixel.swift */,
+			);
+			path = image_framing;
 			sourceTree = "<group>";
 		};
 		2B880218229477C900EBC3F4 /* Spin */ = {
@@ -357,14 +380,19 @@
 				2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */,
 				2B51296B22A37CE1007E824E /* CardsViewController.swift in Sources */,
 				2B51296322A372CE007E824E /* repeat_extensions.swift in Sources */,
+				2B56899B22B2A91800EF2E31 /* Bitmap.swift in Sources */,
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
 				2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */,
 				2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */,
+				2B56899F22B2A95200EF2E31 /* Pixel.swift in Sources */,
 				2B81543F22AAC1EC006063B4 /* CGFloat_coercion.swift in Sources */,
 				2B51296622A37ABE007E824E /* ++--.swift in Sources */,
+				2B56899722B29FD900EF2E31 /* ImageFramingView.swift in Sources */,
 				2B51296D22A37D07007E824E /* CardsLayout.swift in Sources */,
 				2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */,
+				2B56899922B2A14D00EF2E31 /* ImageFramingOptions.swift in Sources */,
+				2B56899D22B2A93400EF2E31 /* ImageBitmap.swift in Sources */,
 				2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
