@@ -4,20 +4,28 @@ import UIKit
 
 class RestartTransitionScale: NSObject, RestartTransitionAnimator {
     var presenting = false
-    var savedFrame = CGRect.zero
+    var initialFrame: CGRect
+    
+    init(initialFrame: CGRect) {
+        self.initialFrame = initialFrame
+    }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 1
     }
     
     func animateTransition(using ctx: UIViewControllerContextTransitioning) {
-        let controller = ctx.viewController(forKey: presenting ? .to : .from) ?! "context is missing view controllers"
         let view = ctx.view(forKey: presenting ? .to : .from) ?! "context is missing views"
-        let container = ctx.containerView
-        let finalFrame = ctx.finalFrame(for: controller)
         if presenting {
-            container.addSubview(view)
-            view.frame = savedFrame
+            ctx.containerView.addSubview(view)
+            view.frame = initialFrame
+            
+            let controller = ctx.viewController(forKey: .to) ?! "context is missing to view controller"
+            let finalFrame = ctx.finalFrame(for: controller)
+            guard ctx.isAnimated else {
+                view.frame = finalFrame
+                return
+            }
             UIView.animate(withDuration: transitionDuration(using: ctx), animations: {
                 view.frame = finalFrame
             }) {
@@ -25,8 +33,10 @@ class RestartTransitionScale: NSObject, RestartTransitionAnimator {
             }
         }
         else {
-            savedFrame = view.frame
-            ctx.completeTransition(true)
+            initialFrame = view.frame
+            if ctx.isAnimated {
+                ctx.completeTransition(true)
+            }
         }
     }
 }

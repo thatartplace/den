@@ -3,15 +3,20 @@
 import UIKit
 
 extension UIPresentationController {
-    func restart(anim: PresentationRestartAnimation, completion: (() -> Void)? = nil) {
-        let (presenting, presented) = (presentingViewController, presentedViewController)
-        let savedDelegate = presented.transitioningDelegate
-        let delegate = RestartTransitionDelegate(anim: anim)
+    func restart(animation: RestartTransitionAnimation, completion: (() -> Void)? = nil) {
+        let (presenting, presented, currentFrame) = (
+            presentingViewController,
+            presentedViewController,
+            frameOfPresentedViewInContainerView
+        )
         
-        presented.transitioningDelegate = delegate
-        presenting.dismiss(animated: true)
-        presenting.present(presented, animated: anim != .none) {
-            print(delegate)
+        let delegate = Unmanaged.passRetained(RestartTransitionDelegate(animation: animation, currentFrame: currentFrame))
+        let savedDelegate = presented.transitioningDelegate
+        
+        presented.transitioningDelegate = delegate.takeUnretainedValue()
+        presenting.dismiss(animated: animation.animateDismiss)
+        presenting.present(presented, animated: animation.animatePresent) {
+            delegate.release()
             presented.transitioningDelegate = savedDelegate
             completion?()
         }
