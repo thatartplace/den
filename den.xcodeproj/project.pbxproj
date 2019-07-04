@@ -14,7 +14,6 @@
 		2B0C6DB3228FDEEA00CA40BD /* denTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6DB2228FDEEA00CA40BD /* denTests.swift */; };
 		2B0C6DBE228FDEEA00CA40BD /* denUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6DBD228FDEEA00CA40BD /* denUITests.swift */; };
 		2B3317A622CD140D007D58A1 /* RestartTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317A522CD140D007D58A1 /* RestartTransitionAnimator.swift */; };
-		2B3317A822CD171D007D58A1 /* RestartTransitionNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317A722CD171D007D58A1 /* RestartTransitionNone.swift */; };
 		2B3317AA22CD2644007D58A1 /* RestartPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317A922CD2644007D58A1 /* RestartPresentationViewController.swift */; };
 		2B3317AC22CD29A6007D58A1 /* RestartTransitionScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317AB22CD29A6007D58A1 /* RestartTransitionScale.swift */; };
 		2B3317AF22CD433C007D58A1 /* TestTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317AE22CD433C007D58A1 /* TestTransitionDelegate.swift */; };
@@ -77,7 +76,6 @@
 		2B0C6DBD228FDEEA00CA40BD /* denUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = denUITests.swift; sourceTree = "<group>"; };
 		2B0C6DBF228FDEEA00CA40BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B3317A522CD140D007D58A1 /* RestartTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartTransitionAnimator.swift; sourceTree = "<group>"; };
-		2B3317A722CD171D007D58A1 /* RestartTransitionNone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartTransitionNone.swift; sourceTree = "<group>"; };
 		2B3317A922CD2644007D58A1 /* RestartPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartPresentationViewController.swift; sourceTree = "<group>"; };
 		2B3317AB22CD29A6007D58A1 /* RestartTransitionScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartTransitionScale.swift; sourceTree = "<group>"; };
 		2B3317AE22CD433C007D58A1 /* TestTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionDelegate.swift; sourceTree = "<group>"; };
@@ -194,14 +192,13 @@
 			path = denUITests;
 			sourceTree = "<group>";
 		};
-		2B3317A422CD13FA007D58A1 /* animators */ = {
+		2B3317A422CD13FA007D58A1 /* animation */ = {
 			isa = PBXGroup;
 			children = (
 				2B3317A522CD140D007D58A1 /* RestartTransitionAnimator.swift */,
-				2B3317A722CD171D007D58A1 /* RestartTransitionNone.swift */,
 				2B3317AB22CD29A6007D58A1 /* RestartTransitionScale.swift */,
 			);
-			path = animators;
+			path = animation;
 			sourceTree = "<group>";
 		};
 		2B3317AD22CD4328007D58A1 /* test_transition */ = {
@@ -289,7 +286,7 @@
 				2BBB825022CCEE52008B7985 /* UIPresentationController+restart.swift */,
 				2B847E3F22CE72BC00004851 /* RestartTransitionDelegate.swift */,
 				2BBB825222CCEE95008B7985 /* RestartTransitionAnimation.swift */,
-				2B3317A422CD13FA007D58A1 /* animators */,
+				2B3317A422CD13FA007D58A1 /* animation */,
 				2B3317A922CD2644007D58A1 /* RestartPresentationViewController.swift */,
 			);
 			path = restart_presentation;
@@ -452,7 +449,6 @@
 				2B3317AA22CD2644007D58A1 /* RestartPresentationViewController.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
 				2B3317AC22CD29A6007D58A1 /* RestartTransitionScale.swift in Sources */,
-				2B3317A822CD171D007D58A1 /* RestartTransitionNone.swift in Sources */,
 				2B3317B122CD43B1007D58A1 /* TestTransitionViewController.swift in Sources */,
 				2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */,
 				2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */,

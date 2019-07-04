@@ -2,25 +2,33 @@
 
 import UIKit
 
-class RestartTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
-    let animator: RestartTransitionAnimator
+class RestartTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+    var animator: RestartTransitionAnimator?
     
     init(animation: RestartTransitionAnimation, currentFrame: CGRect) {
         switch animation {
         case .scale:
             animator = RestartTransitionScale(initialFrame: currentFrame)
         default:
-            animator = RestartTransitionNone()
+            animator = nil
         }
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animator.presenting = false
-        return animator
+        animator?.entering = false
+        return self
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animator.presenting = true
-        return animator
+        animator?.entering = true
+        return self
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return animator?.duration(using: transitionContext) ?? 0
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        animator?.animate(using: transitionContext)
     }
 }
