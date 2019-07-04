@@ -7,7 +7,7 @@ enum RestartTransitionAnimation {
     case scale
     
     var animateDismiss: Bool {
-        return false
+        return self != .none
     }
     
     var animatePresent: Bool {

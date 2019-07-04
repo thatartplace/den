@@ -5,6 +5,7 @@ import UIKit
 class RestartTransitionScale: NSObject, RestartTransitionAnimator {
     var presenting = false
     var initialFrame: CGRect
+    var snapshot: UIView?
     
     init(initialFrame: CGRect) {
         self.initialFrame = initialFrame
@@ -16,25 +17,31 @@ class RestartTransitionScale: NSObject, RestartTransitionAnimator {
     
     func animateTransition(using ctx: UIViewControllerContextTransitioning) {
         let view = ctx.view(forKey: presenting ? .to : .from) ?! "context is missing views"
+        let to = ctx.viewController(forKey: .to) ?! "context is missing to view controller"
         if presenting {
             ctx.containerView.addSubview(view)
-            view.frame = initialFrame
+            snapshot?.removeFromSuperview()
             
-            let controller = ctx.viewController(forKey: .to) ?! "context is missing to view controller"
-            let finalFrame = ctx.finalFrame(for: controller)
-            guard ctx.isAnimated else {
-                view.frame = finalFrame
-                return
+            let finalFrame = ctx.finalFrame(for: to)
+            if ctx.isAnimated {
+                view.frame = initialFrame
+                UIView.animate(withDuration: transitionDuration(using: ctx), animations: {
+                    view.frame = finalFrame
+                }) {
+                    ctx.completeTransition($0)
+                }
             }
-            UIView.animate(withDuration: transitionDuration(using: ctx), animations: {
+            else {
                 view.frame = finalFrame
-            }) {
-                ctx.completeTransition($0)
             }
         }
         else {
             initialFrame = view.frame
             if ctx.isAnimated {
+                let snapshot = view.snapshotView(afterScreenUpdates: false) ?! "can't create snapshot of presented view"
+                snapshot.frame = view.frame
+                self.snapshot = snapshot
+                to.view.addSubview(snapshot)
                 ctx.completeTransition(true)
             }
         }
