@@ -39,7 +39,9 @@ struct RestartTransitionScale: RestartTransitionAnimator {
             snapshot.frame = view.frame
             self.snapshot = snapshot
             presenting.view.addSubview(snapshot)
-            ctx.completeTransition(true)
+            DispatchQueue.main.async {
+                ctx.completeTransition(true)
+            }
         }
     }
 }
