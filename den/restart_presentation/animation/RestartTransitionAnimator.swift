@@ -2,6 +2,9 @@
 
 import UIKit
 
+typealias TransitionViewsContext = (presenting: UIView?, presented: UIView)
+typealias TransitionViewControllersContext = (presenting: UIViewController, presented: UIViewController)
+
 protocol RestartTransitionAnimator {
     var entering: Bool { get set }
     mutating func present(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext)
@@ -11,20 +14,17 @@ protocol RestartTransitionAnimator {
 }
 
 extension RestartTransitionAnimator {
-    typealias TransitionViewsContext = (presenting: UIView?, presented: UIView)
-    typealias TransitionViewControllersContext = (presenting: UIViewController, presented: UIViewController)
-    
     func viewsContext(_ ctx: UIViewControllerContextTransitioning) -> TransitionViewsContext {
         return (
             presenting: ctx.view(forKey: entering ? .from : .to),
-            presented: ctx.view(forKey: entering ? .to : .from) ?! "context is missing presented view"
+            presented: ctx.view(forKey: entering ? .to : .from)!
         )
     }
     
     func viewControllersContext(_ ctx: UIViewControllerContextTransitioning) -> TransitionViewControllersContext {
         return (
-            presenting: ctx.viewController(forKey: entering ? .from : .to) ?! "context is missing presenting view controller",
-            presented: ctx.viewController(forKey: entering ? .to : .from) ?! "context is missing presented view controller"
+            presenting: ctx.viewController(forKey: entering ? .from : .to)!,
+            presented: ctx.viewController(forKey: entering ? .to : .from)!
         )
     }
     

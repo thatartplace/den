@@ -35,10 +35,11 @@ struct RestartTransitionScale: RestartTransitionAnimator {
         let presenting = viewControllers.presenting
         initialFrame = view.frame
         if ctx.isAnimated {
-            let snapshot = view.snapshotView(afterScreenUpdates: false) ?! "can't create snapshot of presented view"
-            snapshot.frame = view.frame
-            self.snapshot = snapshot
-            presenting.view.addSubview(snapshot)
+            if let snapshot = view.snapshotView(afterScreenUpdates: false) {
+                snapshot.frame = view.frame
+                presenting.view.addSubview(snapshot)
+                self.snapshot = snapshot
+            }
             DispatchQueue.main.async {
                 ctx.completeTransition(true)
             }

@@ -40,7 +40,6 @@
 		2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */; };
 		2BBB825122CCEE52008B7985 /* UIPresentationController+restart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB825022CCEE52008B7985 /* UIPresentationController+restart.swift */; };
 		2BBB825322CCEE95008B7985 /* RestartTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB825222CCEE95008B7985 /* RestartTransitionAnimation.swift */; };
-		2BBB825722CD0301008B7985 /* ?!.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB825622CD0301008B7985 /* ?!.swift */; };
 		2BD271CF22AE8DDE000291A3 /* SafariTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD271CE22AE8DDE000291A3 /* SafariTestVC.swift */; };
 		2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB225122A8150200ACD21D /* CardsCell.swift */; };
 /* End PBXBuildFile section */
@@ -102,7 +101,6 @@
 		2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNibViewController.swift; sourceTree = "<group>"; };
 		2BBB825022CCEE52008B7985 /* UIPresentationController+restart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPresentationController+restart.swift"; sourceTree = "<group>"; };
 		2BBB825222CCEE95008B7985 /* RestartTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartTransitionAnimation.swift; sourceTree = "<group>"; };
-		2BBB825622CD0301008B7985 /* ?!.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "?!.swift"; sourceTree = "<group>"; };
 		2BD271CE22AE8DDE000291A3 /* SafariTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariTestVC.swift; sourceTree = "<group>"; };
 		2BDB225122A8150200ACD21D /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,7 +223,6 @@
 				2B51296522A37ABD007E824E /* ++--.swift */,
 				2B33707122A44CEE009A0BA5 /* ?=.swift */,
 				2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */,
-				2BBB825622CD0301008B7985 /* ?!.swift */,
 			);
 			path = operators;
 			sourceTree = "<group>";
@@ -445,7 +442,6 @@
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0B1F1822B7C7F90088514F /* ImageFramingVC.swift in Sources */,
 				2B847E4022CE72BC00004851 /* RestartTransitionDelegate.swift in Sources */,
-				2BBB825722CD0301008B7985 /* ?!.swift in Sources */,
 				2B3317AA22CD2644007D58A1 /* RestartPresentationViewController.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
 				2B3317AC22CD29A6007D58A1 /* RestartTransitionScale.swift in Sources */,
