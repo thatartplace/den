@@ -5,7 +5,7 @@ import UIKit
 typealias TransitionViewsContext = (presenting: UIView?, presented: UIView)
 typealias TransitionViewControllersContext = (presenting: UIViewController, presented: UIViewController)
 
-protocol RestartTransitionAnimator {
+protocol RePresentTransitionAnimator {
     var entering: Bool { get set }
     func present(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> Self
     func dismiss(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> Self
@@ -13,7 +13,7 @@ protocol RestartTransitionAnimator {
     func duration(using: UIViewControllerContextTransitioning?) -> TimeInterval
 }
 
-extension RestartTransitionAnimator {
+extension RePresentTransitionAnimator {
     func viewsContext(_ ctx: UIViewControllerContextTransitioning) -> TransitionViewsContext {
         return (
             presenting: ctx.view(forKey: entering ? .from : .to),

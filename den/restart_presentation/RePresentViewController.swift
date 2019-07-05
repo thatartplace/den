@@ -2,10 +2,10 @@
 
 import UIKit
 
-class RestartPresentationViewController: UIViewController {
+class RePresentViewController: UIViewController {
     @IBAction func changePresentation(_ sender: Any) {
         modalPresentationStyle = modalPresentationStyle == .fullScreen ? .formSheet : .fullScreen
-        presentationController?.restart(animation: .scale)
+        rePresent(animation: .scale)
     }
     
     @IBAction func dismiss(_ sender: Any) {

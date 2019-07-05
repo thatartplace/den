@@ -2,7 +2,7 @@
 
 import UIKit
 
-struct RestartTransitionScale: RestartTransitionAnimator {
+struct RePresentTransitionScale: RePresentTransitionAnimator {
     var entering = false
     var initialFrame: CGRect
     var snapshot: UIView?
@@ -11,7 +11,7 @@ struct RestartTransitionScale: RestartTransitionAnimator {
         self.initialFrame = initialFrame
     }
     
-    func present(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RestartTransitionScale {
+    func present(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RePresentTransitionScale {
         let view = views.presented
         let presented = viewControllers.presented
         ctx.containerView.addSubview(view)
@@ -31,7 +31,7 @@ struct RestartTransitionScale: RestartTransitionAnimator {
         return self
     }
     
-    func dismiss(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RestartTransitionScale {
+    func dismiss(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RePresentTransitionScale {
         var state = self
         let view = views.presented
         let presenting = viewControllers.presenting

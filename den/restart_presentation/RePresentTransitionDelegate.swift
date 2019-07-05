@@ -2,24 +2,30 @@
 
 import UIKit
 
-class RestartTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-    var animator: RestartTransitionAnimator?
+class RePresentTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+    var animator: RePresentTransitionAnimator?
     
-    init(animation: RestartTransitionAnimation, currentFrame: CGRect) {
+    init(animation: RePresentTransitionAnimation, currentFrame: CGRect) {
         switch animation {
         case .scale:
-            animator = RestartTransitionScale(initialFrame: currentFrame)
+            animator = RePresentTransitionScale(initialFrame: currentFrame)
         default:
             animator = nil
         }
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if animator == nil {
+            return nil
+        }
         animator?.entering = false
         return self
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if animator == nil {
+            return nil
+        }
         animator?.entering = true
         return self
     }

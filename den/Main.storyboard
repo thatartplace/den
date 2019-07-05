@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="-932" y="872"/>
         </scene>
-        <!--Restart Presentation View Controller-->
+        <!--Re Present View Controller-->
         <scene sceneID="FB1-sE-bYY">
             <objects>
-                <viewController id="LVJ-nD-IBG" customClass="RestartPresentationViewController" customModule="den" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LVJ-nD-IBG" customClass="RePresentViewController" customModule="den" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vgd-pD-brW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
