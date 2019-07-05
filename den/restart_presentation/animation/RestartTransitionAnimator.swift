@@ -7,9 +7,9 @@ typealias TransitionViewControllersContext = (presenting: UIViewController, pres
 
 protocol RestartTransitionAnimator {
     var entering: Bool { get set }
-    mutating func present(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext)
-    mutating func dismiss(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext)
-    mutating func animate(using: UIViewControllerContextTransitioning)
+    func present(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> Self
+    func dismiss(using: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> Self
+    func animate(using: UIViewControllerContextTransitioning) -> Self
     func duration(using: UIViewControllerContextTransitioning?) -> TimeInterval
 }
 
@@ -28,18 +28,18 @@ extension RestartTransitionAnimator {
         )
     }
     
-    mutating func animate(using ctx: UIViewControllerContextTransitioning) {
+    func animate(using ctx: UIViewControllerContextTransitioning) -> Self {
         let views = viewsContext(ctx)
         let controllers = viewControllersContext(ctx)
         if entering {
-            present(using: ctx, views: views, viewControllers: controllers)
+            return present(using: ctx, views: views, viewControllers: controllers)
         }
         else {
-            dismiss(using: ctx, views: views, viewControllers: controllers)
+            return dismiss(using: ctx, views: views, viewControllers: controllers)
         }
     }
     
     func duration(using ctx: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1
+        return ctx?.isAnimated == .some(true) ? 0.75 : 0
     }
 }

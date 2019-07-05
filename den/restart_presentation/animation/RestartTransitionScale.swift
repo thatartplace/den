@@ -11,7 +11,7 @@ struct RestartTransitionScale: RestartTransitionAnimator {
         self.initialFrame = initialFrame
     }
     
-    mutating func present(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) {
+    func present(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RestartTransitionScale {
         let view = views.presented
         let presented = viewControllers.presented
         ctx.containerView.addSubview(view)
@@ -28,21 +28,25 @@ struct RestartTransitionScale: RestartTransitionAnimator {
         else {
             view.frame = finalFrame
         }
+        return self
     }
     
-    mutating func dismiss(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) {
+    func dismiss(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RestartTransitionScale {
+        var state = self
         let view = views.presented
         let presenting = viewControllers.presenting
-        initialFrame = view.frame
+        state.initialFrame = view.frame
         if ctx.isAnimated {
             if let snapshot = view.snapshotView(afterScreenUpdates: false) {
                 snapshot.frame = view.frame
                 presenting.view.addSubview(snapshot)
-                self.snapshot = snapshot
+                state.snapshot = snapshot
             }
+            // make sure animator functions return before completeTransition enters
             DispatchQueue.main.async {
                 ctx.completeTransition(true)
             }
         }
+        return state
     }
 }

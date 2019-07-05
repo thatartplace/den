@@ -29,6 +29,6 @@ class RestartTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        animator?.animate(using: transitionContext)
+        animator = animator?.animate(using: transitionContext)
     }
 }
