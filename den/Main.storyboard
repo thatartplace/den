@@ -226,10 +226,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-5M-g9S">
+                                <rect key="frame" x="172.66666666666666" y="391" width="30" height="30"/>
+                                <state key="normal" title="Info"/>
+                                <connections>
+                                    <action selector="info:" destination="FUW-hK-XZo" eventType="touchUpInside" id="vsI-Np-WzZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vus-jM-M8c" firstAttribute="leading" secondItem="rtv-7z-vYl" secondAttribute="leading" id="3FT-17-VzD"/>
+                            <constraint firstItem="SpF-5M-g9S" firstAttribute="centerY" secondItem="lPY-Jm-e95" secondAttribute="centerY" id="6DC-jt-QMr"/>
+                            <constraint firstItem="SpF-5M-g9S" firstAttribute="centerX" secondItem="lPY-Jm-e95" secondAttribute="centerX" id="eoR-lu-mSe"/>
                             <constraint firstItem="Vus-jM-M8c" firstAttribute="trailing" secondItem="rtv-7z-vYl" secondAttribute="trailing" id="gjh-Cu-ZM4"/>
                             <constraint firstItem="Vus-jM-M8c" firstAttribute="top" secondItem="rtv-7z-vYl" secondAttribute="top" id="iwH-30-KRw"/>
                         </constraints>
