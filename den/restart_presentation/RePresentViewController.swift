@@ -4,7 +4,7 @@ import UIKit
 
 class RePresentViewController: UIViewController {
     @IBAction func changePresentation(_ sender: Any) {
-        modalPresentationStyle = modalPresentationStyle == .fullScreen ? .formSheet : .fullScreen
+        modalPresentationStyle = modalPresentationStyle == .pageSheet ? .formSheet : .pageSheet
         rePresent(animation: .scale)
     }
     

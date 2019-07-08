@@ -12,34 +12,35 @@ struct RePresentTransitionScale: RePresentTransitionAnimator {
     }
     
     func present(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RePresentTransitionScale {
-        let view = views.presented
-        let presented = viewControllers.presented
-        ctx.containerView.addSubview(view)
+        let presented = views.presented
+        let container = ctx.containerView
+        let finalFrame = ctx.finalFrame(for: viewControllers.presented)
+        
         snapshot?.removeFromSuperview()
-        let finalFrame = ctx.finalFrame(for: presented)
+        container.addSubview(presented)
         if ctx.isAnimated {
-            view.frame = initialFrame
+            presented.frame = initialFrame
             UIView.animate(withDuration: duration(using: ctx), animations: {
-                view.frame = finalFrame
+                presented.frame = finalFrame
             }) {
                 ctx.completeTransition($0 && !ctx.transitionWasCancelled)
             }
         }
         else {
-            view.frame = finalFrame
+            presented.frame = finalFrame
         }
         return self
     }
     
     func dismiss(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RePresentTransitionScale {
         var state = self
-        let view = views.presented
-        let presenting = viewControllers.presenting
-        state.initialFrame = view.frame
+        let presentingVC = viewControllers.presenting
+        let container = ctx.containerView
+        
         if ctx.isAnimated {
-            if let snapshot = view.snapshotView(afterScreenUpdates: false) {
-                snapshot.frame = view.frame
-                presenting.view.addSubview(snapshot)
+            if let snapshot = container.snapshotView(afterScreenUpdates: false) {
+                snapshot.frame = container.frame
+                presentingVC.view.addSubview(snapshot)
                 state.snapshot = snapshot
             }
             // make sure animator functions return before completeTransition enters
