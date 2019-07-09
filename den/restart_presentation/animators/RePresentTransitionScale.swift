@@ -22,8 +22,8 @@ struct RePresentTransitionScale: RePresentTransitionAnimator {
             presented.frame = initialFrame
             UIView.animate(withDuration: duration(using: ctx), animations: {
                 presented.frame = finalFrame
-            }) {
-                ctx.completeTransition($0 && !ctx.transitionWasCancelled)
+            }) { _ in
+                ctx.completeTransition(!ctx.transitionWasCancelled)
             }
         }
         else {
@@ -45,7 +45,7 @@ struct RePresentTransitionScale: RePresentTransitionAnimator {
             }
             // make sure animator functions return before completeTransition enters
             DispatchQueue.main.async {
-                ctx.completeTransition(true)
+                ctx.completeTransition(!ctx.transitionWasCancelled)
             }
         }
         return state
