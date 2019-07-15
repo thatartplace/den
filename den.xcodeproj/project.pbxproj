@@ -30,8 +30,7 @@
 		2B56899B22B2A91800EF2E31 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899A22B2A91800EF2E31 /* Bitmap.swift */; };
 		2B56899D22B2A93400EF2E31 /* ImageBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899C22B2A93400EF2E31 /* ImageBitmap.swift */; };
 		2B56899F22B2A95200EF2E31 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56899E22B2A95200EF2E31 /* Pixel.swift */; };
-		2B74DD5922D6994B008E7E3E /* FSMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74DD5822D6994B008E7E3E /* FSMController.swift */; };
-		2B74DDD122D784BE008E7E3E /* FSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74DDD022D784BE008E7E3E /* FSM.swift */; };
+		2B74DDD122D784BE008E7E3E /* FSMState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74DDD022D784BE008E7E3E /* FSMState.swift */; };
 		2B81543F22AAC1EC006063B4 /* CGFloat_coercion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */; };
 		2B847E4022CE72BC00004851 /* RePresentTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B847E3F22CE72BC00004851 /* RePresentTransitionDelegate.swift */; };
 		2B8802172294771B00EBC3F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8802162294771B00EBC3F4 /* Main.storyboard */; };
@@ -93,8 +92,7 @@
 		2B56899A22B2A91800EF2E31 /* Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 		2B56899C22B2A93400EF2E31 /* ImageBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBitmap.swift; sourceTree = "<group>"; };
 		2B56899E22B2A95200EF2E31 /* Pixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
-		2B74DD5822D6994B008E7E3E /* FSMController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSMController.swift; sourceTree = "<group>"; };
-		2B74DDD022D784BE008E7E3E /* FSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSM.swift; sourceTree = "<group>"; };
+		2B74DDD022D784BE008E7E3E /* FSMState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSMState.swift; sourceTree = "<group>"; };
 		2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat_coercion.swift; sourceTree = "<group>"; };
 		2B847E3F22CE72BC00004851 /* RePresentTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentTransitionDelegate.swift; sourceTree = "<group>"; };
 		2B8802162294771B00EBC3F4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -258,8 +256,7 @@
 		2B74DD5322D67E0D008E7E3E /* fsm */ = {
 			isa = PBXGroup;
 			children = (
-				2B74DDD022D784BE008E7E3E /* FSM.swift */,
-				2B74DD5822D6994B008E7E3E /* FSMController.swift */,
+				2B74DDD022D784BE008E7E3E /* FSMState.swift */,
 			);
 			path = fsm;
 			sourceTree = "<group>";
@@ -447,13 +444,12 @@
 				2BD271CF22AE8DDE000291A3 /* SafariTestVC.swift in Sources */,
 				2B3317A622CD140D007D58A1 /* RePresentTransitionAnimator.swift in Sources */,
 				2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */,
-				2B74DDD122D784BE008E7E3E /* FSM.swift in Sources */,
+				2B74DDD122D784BE008E7E3E /* FSMState.swift in Sources */,
 				2B3317AF22CD433C007D58A1 /* TestTransitionDelegate.swift in Sources */,
 				2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */,
 				2B51296B22A37CE1007E824E /* CardsViewController.swift in Sources */,
 				2B51296322A372CE007E824E /* repeat_extensions.swift in Sources */,
 				2B56899B22B2A91800EF2E31 /* Bitmap.swift in Sources */,
-				2B74DD5922D6994B008E7E3E /* FSMController.swift in Sources */,
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0B1F1822B7C7F90088514F /* ImageFramingVC.swift in Sources */,
 				2B4EA51922CFD07D00DC6F6A /* UIViewController+rePresent.swift in Sources */,
