@@ -25,7 +25,7 @@ extension UIViewController {
         
         pre?(presented)
         
-        let currentFrame = controller.frameOfPresentedViewInContainerView
+        let currentFrame = controller.containerView != nil ? controller.frameOfPresentedViewInContainerView : presented.view.frame
         let delegate = Unmanaged.passRetained(RePresentTransitionDelegate(animation: animation, currentFrame: currentFrame))
         let savedDelegate = presented.transitioningDelegate
         
