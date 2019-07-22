@@ -5,10 +5,10 @@ import UIKit
 class RePresentTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     var animator: RePresentTransitionAnimator?
     
-    init(animation: RePresentTransitionAnimation, currentFrame: CGRect) {
+    init(animation: RePresentTransitionAnimation) {
         switch animation {
         case .scale:
-            animator = RePresentTransitionScale(initialFrame: currentFrame)
+            animator = RePresentTransitionScale()
         default:
             animator = nil
         }

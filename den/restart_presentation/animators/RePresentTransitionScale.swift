@@ -4,12 +4,8 @@ import UIKit
 
 struct RePresentTransitionScale: RePresentTransitionAnimator {
     var entering = false
-    var initialFrame: CGRect
+    var initialFrame = CGRect.zero
     var snapshot: UIView?
-    
-    init(initialFrame: CGRect) {
-        self.initialFrame = initialFrame
-    }
     
     func present(using ctx: UIViewControllerContextTransitioning, views: TransitionViewsContext, viewControllers: TransitionViewControllersContext) -> RePresentTransitionScale {
         let presented = views.presented
@@ -37,6 +33,7 @@ struct RePresentTransitionScale: RePresentTransitionAnimator {
         let presentingVC = viewControllers.presenting
         let container = ctx.containerView
         
+        state.initialFrame = views.presented.frame
         if ctx.isAnimated {
             if let snapshot = container.snapshotView(afterScreenUpdates: false) {
                 snapshot.frame = container.frame
