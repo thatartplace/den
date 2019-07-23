@@ -2,7 +2,7 @@
 
 import UIKit
 
-enum RePresentTransitionAnimation {
+enum RePresentAnimation {
     case none
     case scale
     

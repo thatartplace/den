@@ -313,6 +313,14 @@
                                     <action selector="dismiss:" destination="LVJ-nD-IBG" eventType="touchUpInside" id="DKH-lV-AUo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFz-3f-M7p">
+                                <rect key="frame" x="126.66666666666669" y="269.66666666666669" width="122" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                <state key="normal" title="Repeat!"/>
+                                <connections>
+                                    <action selector="repeatChange:" destination="LVJ-nD-IBG" eventType="touchUpInside" id="OJM-fe-eCY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -321,9 +329,11 @@
                             <constraint firstItem="E9e-vx-H1M" firstAttribute="bottom" secondItem="KMz-Ll-Xtt" secondAttribute="bottom" constant="16" id="4FZ-2l-QnM"/>
                             <constraint firstItem="YtJ-AK-R8R" firstAttribute="centerY" secondItem="Vgd-pD-brW" secondAttribute="centerY" id="5N4-0Q-RbN"/>
                             <constraint firstItem="Nsn-8f-Ckr" firstAttribute="leading" secondItem="E9e-vx-H1M" secondAttribute="leading" constant="16" id="DwE-rd-TEc"/>
+                            <constraint firstItem="YtJ-AK-R8R" firstAttribute="top" secondItem="iFz-3f-M7p" secondAttribute="bottom" constant="60" id="EM6-n2-gjE"/>
                             <constraint firstItem="E9e-vx-H1M" firstAttribute="trailing" secondItem="DEu-Cr-ozJ" secondAttribute="trailing" constant="16" id="Jh4-IJ-q2w"/>
                             <constraint firstItem="agx-Md-Azu" firstAttribute="leading" secondItem="E9e-vx-H1M" secondAttribute="leading" constant="16" id="Wlx-po-NAW"/>
                             <constraint firstItem="Nsn-8f-Ckr" firstAttribute="bottom" secondItem="E9e-vx-H1M" secondAttribute="bottom" constant="-16" id="e33-OY-rUR"/>
+                            <constraint firstItem="iFz-3f-M7p" firstAttribute="centerX" secondItem="Vgd-pD-brW" secondAttribute="centerX" id="eXi-hR-5ON"/>
                             <constraint firstItem="E9e-vx-H1M" firstAttribute="trailing" secondItem="KMz-Ll-Xtt" secondAttribute="trailing" constant="16" id="gf8-Mq-Sqt"/>
                             <constraint firstItem="Uqu-oz-pWN" firstAttribute="top" secondItem="YtJ-AK-R8R" secondAttribute="bottom" constant="30" id="o1D-ES-c8T"/>
                             <constraint firstItem="DEu-Cr-ozJ" firstAttribute="top" secondItem="E9e-vx-H1M" secondAttribute="top" constant="16" id="qXM-Yj-NL8"/>

@@ -11,4 +11,8 @@ class RePresentViewController: UIViewController {
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    @IBAction func repeatChange(_ sender: Any) {
+        10.times { _ in changePresentation(sender) }
+    }
 }
