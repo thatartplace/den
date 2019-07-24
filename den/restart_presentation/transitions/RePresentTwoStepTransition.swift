@@ -18,34 +18,38 @@ extension RePresentTwoStepTransition {
             preconditionFailure("undefined animator state")
         }
         
-        guard let toView = ctx.view(forKey: .to) else {
-            preconditionFailure("transition context is missing to view")
-        }
-        ctx.containerView.addSubview(toView)
-        
+        prepare(using: ctx)
         performInitial(using: ctx)
         if ctx.isAnimated {
             UIView.animate(withDuration: duration(using: ctx), animations: {
                 self.performFinal(using: ctx)
             }, completion: { _ in
-                self.state = self.completionState(using: ctx)
+                self.setCompletionState(using: ctx)
                 self.performInitial(using: ctx)
-                ctx.completeTransition(!ctx.transitionWasCancelled)
+                ctx.completeTransition(!self.cancelled)
             })
         }
         else {
             performFinal(using: ctx)
-            state = completionState(using: ctx)
+            setCompletionState(using: ctx)
         }
     }
     
-    func completionState(using ctx: UIViewControllerContextTransitioning) -> RePresentTransitionState {
+    func prepare(using ctx: UIViewControllerContextTransitioning) {
+        let container = ctx.containerView
+        if let toView = ctx.view(forKey: .to) {
+            container.addSubview(toView)
+        }
+    }
+    
+    func setCompletionState(using ctx: UIViewControllerContextTransitioning) {
         let cancelled = ctx.transitionWasCancelled
+        self.cancelled = cancelled
         switch state {
         case .dismissing:
-            return cancelled ? .presented : .dismissed
+            state = cancelled ? .presented : .dismissed
         case .presenting:
-            return cancelled ? .dismissed : .presented
+            state = cancelled ? .dismissed : .presented
         default:
             preconditionFailure("undefined animator state")
         }

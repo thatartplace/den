@@ -16,6 +16,7 @@ class RePresentContext: NSObject {
         presenting = vc
         self.pre = pre
         self.post = post
+        transition = style.makeTransition()
     }
     
     func start(done: @escaping () -> Void) {
@@ -44,11 +45,11 @@ class RePresentContext: NSObject {
 
 extension RePresentContext: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
+        return transition != nil ? self : nil
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
+        return transition != nil ? self : nil
     }
 }
 

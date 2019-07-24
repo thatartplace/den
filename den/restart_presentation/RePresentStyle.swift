@@ -13,4 +13,13 @@ enum RePresentStyle {
     var animatePresent: Bool {
         return self != .none
     }
+    
+    func makeTransition() -> RePresentTransition? {
+        switch self {
+        case .scale:
+            return RePresentScaleTransition()
+        default:
+            return nil
+        }
+    }
 }
