@@ -7,9 +7,10 @@ class RePresentContext: NSObject {
     weak var presenting: UIViewController?
     var pre: ((UIViewController) -> Void)?
     var post: ((UIViewController) -> Void)?
+    var transition: RePresentTransition?
     
     init(for vc: UIViewController,
-         animation: RePresentAnimation,
+         style: RePresentStyle,
          pre: ((UIViewController) -> Void)? = nil,
          post: ((UIViewController) -> Void)? = nil) {
         presenting = vc
@@ -43,10 +44,28 @@ class RePresentContext: NSObject {
 
 extension RePresentContext: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        guard transition?.state ?== .presented else {
+            return nil
+        }
+        transition?.state = .dismissing
+        return self
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        guard transition?.state ?== .dismissed else {
+            return nil
+        }
+        transition?.state = .presenting
+        return self
+    }
+}
+
+extension RePresentContext: UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return transition?.duration(using: transitionContext) ?? 0
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        transition?.perform(using: transitionContext)
     }
 }

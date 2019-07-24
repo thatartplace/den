@@ -17,17 +17,17 @@ extension UIViewController {
     /// - parameters:
     ///     - pre: called before the transitions begin. the presented vc is passed as argument
     ///     - post: called after all animations finish. presented vc is passed as argument
-    func rePresent(animation: RePresentAnimation,
+    func rePresent(style: RePresentStyle,
                    pre: ((UIViewController) -> Void)? = nil,
                    post: ((UIViewController) -> Void)? = nil) {
         guard let presented = presentedViewController else {
-            presentingViewController?.rePresent(animation: animation, pre: pre, post: post)
+            presentingViewController?.rePresent(style: style, pre: pre, post: post)
             return
         }
         guard let presenting = presented.presentingViewController else {
             return
         }
-        let ctx = RePresentContext(for: presenting, animation: animation, pre: pre, post: post)
+        let ctx = RePresentContext(for: presenting, style: style, pre: pre, post: post)
         if enqueue(ctx, for: presenting) == 1 {
             ctx.start {
                 self.startNext(for: presenting)

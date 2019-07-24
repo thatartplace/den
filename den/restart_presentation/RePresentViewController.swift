@@ -5,7 +5,7 @@ import UIKit
 class RePresentViewController: UIViewController {
     @IBAction func changePresentation(_ sender: Any) {
         modalPresentationStyle = modalPresentationStyle == .pageSheet ? .formSheet : .pageSheet
-        rePresent(animation: .scale)
+        rePresent(style: .scale)
     }
     
     @IBAction func dismiss(_ sender: Any) {

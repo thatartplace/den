@@ -2,7 +2,7 @@
 
 import UIKit
 
-enum RePresentAnimation {
+enum RePresentStyle {
     case none
     case scale
     

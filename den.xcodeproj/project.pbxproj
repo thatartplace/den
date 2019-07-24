@@ -18,6 +18,9 @@
 		2B3317B122CD43B1007D58A1 /* TestTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317B022CD43B1007D58A1 /* TestTransitionViewController.swift */; };
 		2B3317B322CD44D2007D58A1 /* TestTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317B222CD44D2007D58A1 /* TestTransitionSegue.swift */; };
 		2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B33707122A44CEE009A0BA5 /* ?=.swift */; };
+		2B49031222E803EC00238B46 /* ?==.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031122E803EC00238B46 /* ?==.swift */; };
+		2B49031422E8205300238B46 /* RePresentScaleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031322E8205300238B46 /* RePresentScaleTransition.swift */; };
+		2B49031622E8337D00238B46 /* RePresentTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031522E8337D00238B46 /* RePresentTransitionAnimator.swift */; };
 		2B4EA51922CFD07D00DC6F6A /* UIViewController+rePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EA51822CFD07D00DC6F6A /* UIViewController+rePresent.swift */; };
 		2B51296322A372CE007E824E /* repeat_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296122A372CE007E824E /* repeat_extensions.swift */; };
 		2B51296622A37ABE007E824E /* ++--.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296522A37ABD007E824E /* ++--.swift */; };
@@ -38,10 +41,10 @@
 		2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */; };
 		2BAF20F22295E22C00CFC04E /* ViewFromNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAF20F12295E22C00CFC04E /* ViewFromNib.xib */; };
 		2BAF20F42295E66900CFC04E /* ViewFromNibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */; };
-		2BBB825322CCEE95008B7985 /* RePresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB825222CCEE95008B7985 /* RePresentAnimation.swift */; };
+		2BBB825322CCEE95008B7985 /* RePresentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB825222CCEE95008B7985 /* RePresentStyle.swift */; };
 		2BD271CF22AE8DDE000291A3 /* SafariTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD271CE22AE8DDE000291A3 /* SafariTestVC.swift */; };
 		2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB225122A8150200ACD21D /* CardsCell.swift */; };
-		2BE3399522E6756900095D0C /* RePresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE3399422E6756900095D0C /* RePresentAnimator.swift */; };
+		2BE3399522E6756900095D0C /* RePresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE3399422E6756900095D0C /* RePresentTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		2B3317B022CD43B1007D58A1 /* TestTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionViewController.swift; sourceTree = "<group>"; };
 		2B3317B222CD44D2007D58A1 /* TestTransitionSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionSegue.swift; sourceTree = "<group>"; };
 		2B33707122A44CEE009A0BA5 /* ?=.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "?=.swift"; sourceTree = "<group>"; };
+		2B49031122E803EC00238B46 /* ?==.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "?==.swift"; sourceTree = "<group>"; };
+		2B49031322E8205300238B46 /* RePresentScaleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentScaleTransition.swift; sourceTree = "<group>"; };
+		2B49031522E8337D00238B46 /* RePresentTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentTransitionAnimator.swift; sourceTree = "<group>"; };
 		2B4EA51822CFD07D00DC6F6A /* UIViewController+rePresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+rePresent.swift"; sourceTree = "<group>"; };
 		2B51296122A372CE007E824E /* repeat_extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = repeat_extensions.swift; sourceTree = "<group>"; };
 		2B51296522A37ABD007E824E /* ++--.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "++--.swift"; sourceTree = "<group>"; };
@@ -99,10 +105,10 @@
 		2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNib.swift; sourceTree = "<group>"; };
 		2BAF20F12295E22C00CFC04E /* ViewFromNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewFromNib.xib; sourceTree = "<group>"; };
 		2BAF20F32295E66900CFC04E /* ViewFromNibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNibViewController.swift; sourceTree = "<group>"; };
-		2BBB825222CCEE95008B7985 /* RePresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentAnimation.swift; sourceTree = "<group>"; };
+		2BBB825222CCEE95008B7985 /* RePresentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentStyle.swift; sourceTree = "<group>"; };
 		2BD271CE22AE8DDE000291A3 /* SafariTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariTestVC.swift; sourceTree = "<group>"; };
 		2BDB225122A8150200ACD21D /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
-		2BE3399422E6756900095D0C /* RePresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentAnimator.swift; sourceTree = "<group>"; };
+		2BE3399422E6756900095D0C /* RePresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,12 +197,14 @@
 			path = denUITests;
 			sourceTree = "<group>";
 		};
-		2B3317A422CD13FA007D58A1 /* animators */ = {
+		2B3317A422CD13FA007D58A1 /* transitions */ = {
 			isa = PBXGroup;
 			children = (
-				2BE3399422E6756900095D0C /* RePresentAnimator.swift */,
+				2BE3399422E6756900095D0C /* RePresentTransition.swift */,
+				2B49031522E8337D00238B46 /* RePresentTransitionAnimator.swift */,
+				2B49031322E8205300238B46 /* RePresentScaleTransition.swift */,
 			);
-			path = animators;
+			path = transitions;
 			sourceTree = "<group>";
 		};
 		2B3317AD22CD4328007D58A1 /* test_transition */ = {
@@ -223,6 +231,7 @@
 				2B51296522A37ABD007E824E /* ++--.swift */,
 				2B33707122A44CEE009A0BA5 /* ?=.swift */,
 				2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */,
+				2B49031122E803EC00238B46 /* ?==.swift */,
 			);
 			path = operators;
 			sourceTree = "<group>";
@@ -289,9 +298,9 @@
 			isa = PBXGroup;
 			children = (
 				2B4EA51822CFD07D00DC6F6A /* UIViewController+rePresent.swift */,
-				2BBB825222CCEE95008B7985 /* RePresentAnimation.swift */,
+				2BBB825222CCEE95008B7985 /* RePresentStyle.swift */,
 				2B847E3F22CE72BC00004851 /* RePresentContext.swift */,
-				2B3317A422CD13FA007D58A1 /* animators */,
+				2B3317A422CD13FA007D58A1 /* transitions */,
 				2B3317A922CD2644007D58A1 /* RePresentViewController.swift */,
 			);
 			path = restart_presentation;
@@ -437,8 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBB825322CCEE95008B7985 /* RePresentAnimation.swift in Sources */,
+				2BBB825322CCEE95008B7985 /* RePresentStyle.swift in Sources */,
 				2BD271CF22AE8DDE000291A3 /* SafariTestVC.swift in Sources */,
+				2B49031622E8337D00238B46 /* RePresentTransitionAnimator.swift in Sources */,
 				2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */,
 				2B74DDD122D784BE008E7E3E /* FSMState.swift in Sources */,
 				2B3317AF22CD433C007D58A1 /* TestTransitionDelegate.swift in Sources */,
@@ -451,17 +461,19 @@
 				2B4EA51922CFD07D00DC6F6A /* UIViewController+rePresent.swift in Sources */,
 				2B847E4022CE72BC00004851 /* RePresentContext.swift in Sources */,
 				2B3317AA22CD2644007D58A1 /* RePresentViewController.swift in Sources */,
-				2BE3399522E6756900095D0C /* RePresentAnimator.swift in Sources */,
+				2BE3399522E6756900095D0C /* RePresentTransition.swift in Sources */,
 				2B0C6D9E228FDEEA00CA40BD /* AppDelegate.swift in Sources */,
 				2B3317B122CD43B1007D58A1 /* TestTransitionViewController.swift in Sources */,
 				2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */,
 				2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */,
 				2B56899F22B2A95200EF2E31 /* Pixel.swift in Sources */,
 				2B81543F22AAC1EC006063B4 /* CGFloat_coercion.swift in Sources */,
+				2B49031222E803EC00238B46 /* ?==.swift in Sources */,
 				2B3317B322CD44D2007D58A1 /* TestTransitionSegue.swift in Sources */,
 				2B51296622A37ABE007E824E /* ++--.swift in Sources */,
 				2B56899722B29FD900EF2E31 /* ImageFramingView.swift in Sources */,
 				2B51296D22A37D07007E824E /* CardsLayout.swift in Sources */,
+				2B49031422E8205300238B46 /* RePresentScaleTransition.swift in Sources */,
 				2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */,
 				2B56899922B2A14D00EF2E31 /* ImageFramingOptions.swift in Sources */,
 				2B56899D22B2A93400EF2E31 /* ImageBitmap.swift in Sources */,
