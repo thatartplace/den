@@ -18,9 +18,8 @@
 		2B3317B122CD43B1007D58A1 /* TestTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317B022CD43B1007D58A1 /* TestTransitionViewController.swift */; };
 		2B3317B322CD44D2007D58A1 /* TestTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317B222CD44D2007D58A1 /* TestTransitionSegue.swift */; };
 		2B33707222A44CEE009A0BA5 /* ?=.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B33707122A44CEE009A0BA5 /* ?=.swift */; };
-		2B49031222E803EC00238B46 /* ?==.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031122E803EC00238B46 /* ?==.swift */; };
 		2B49031422E8205300238B46 /* RePresentScaleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031322E8205300238B46 /* RePresentScaleTransition.swift */; };
-		2B49031622E8337D00238B46 /* RePresentTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031522E8337D00238B46 /* RePresentTransitionAnimator.swift */; };
+		2B49031622E8337D00238B46 /* RePresentTwoStepTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49031522E8337D00238B46 /* RePresentTwoStepTransition.swift */; };
 		2B4EA51922CFD07D00DC6F6A /* UIViewController+rePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EA51822CFD07D00DC6F6A /* UIViewController+rePresent.swift */; };
 		2B51296322A372CE007E824E /* repeat_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296122A372CE007E824E /* repeat_extensions.swift */; };
 		2B51296622A37ABE007E824E /* ++--.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51296522A37ABD007E824E /* ++--.swift */; };
@@ -82,9 +81,8 @@
 		2B3317B022CD43B1007D58A1 /* TestTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionViewController.swift; sourceTree = "<group>"; };
 		2B3317B222CD44D2007D58A1 /* TestTransitionSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionSegue.swift; sourceTree = "<group>"; };
 		2B33707122A44CEE009A0BA5 /* ?=.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "?=.swift"; sourceTree = "<group>"; };
-		2B49031122E803EC00238B46 /* ?==.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "?==.swift"; sourceTree = "<group>"; };
 		2B49031322E8205300238B46 /* RePresentScaleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentScaleTransition.swift; sourceTree = "<group>"; };
-		2B49031522E8337D00238B46 /* RePresentTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentTransitionAnimator.swift; sourceTree = "<group>"; };
+		2B49031522E8337D00238B46 /* RePresentTwoStepTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentTwoStepTransition.swift; sourceTree = "<group>"; };
 		2B4EA51822CFD07D00DC6F6A /* UIViewController+rePresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+rePresent.swift"; sourceTree = "<group>"; };
 		2B51296122A372CE007E824E /* repeat_extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = repeat_extensions.swift; sourceTree = "<group>"; };
 		2B51296522A37ABD007E824E /* ++--.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "++--.swift"; sourceTree = "<group>"; };
@@ -201,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				2BE3399422E6756900095D0C /* RePresentTransition.swift */,
-				2B49031522E8337D00238B46 /* RePresentTransitionAnimator.swift */,
+				2B49031522E8337D00238B46 /* RePresentTwoStepTransition.swift */,
 				2B49031322E8205300238B46 /* RePresentScaleTransition.swift */,
 			);
 			path = transitions;
@@ -231,7 +229,6 @@
 				2B51296522A37ABD007E824E /* ++--.swift */,
 				2B33707122A44CEE009A0BA5 /* ?=.swift */,
 				2B81543E22AAC1EC006063B4 /* CGFloat_coercion.swift */,
-				2B49031122E803EC00238B46 /* ?==.swift */,
 			);
 			path = operators;
 			sourceTree = "<group>";
@@ -448,7 +445,7 @@
 			files = (
 				2BBB825322CCEE95008B7985 /* RePresentStyle.swift in Sources */,
 				2BD271CF22AE8DDE000291A3 /* SafariTestVC.swift in Sources */,
-				2B49031622E8337D00238B46 /* RePresentTransitionAnimator.swift in Sources */,
+				2B49031622E8337D00238B46 /* RePresentTwoStepTransition.swift in Sources */,
 				2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */,
 				2B74DDD122D784BE008E7E3E /* FSMState.swift in Sources */,
 				2B3317AF22CD433C007D58A1 /* TestTransitionDelegate.swift in Sources */,
@@ -468,7 +465,6 @@
 				2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */,
 				2B56899F22B2A95200EF2E31 /* Pixel.swift in Sources */,
 				2B81543F22AAC1EC006063B4 /* CGFloat_coercion.swift in Sources */,
-				2B49031222E803EC00238B46 /* ?==.swift in Sources */,
 				2B3317B322CD44D2007D58A1 /* TestTransitionSegue.swift in Sources */,
 				2B51296622A37ABE007E824E /* ++--.swift in Sources */,
 				2B56899722B29FD900EF2E31 /* ImageFramingView.swift in Sources */,

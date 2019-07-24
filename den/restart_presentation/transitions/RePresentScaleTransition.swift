@@ -2,20 +2,18 @@
 
 import UIKit
 
-class RePresentScaleTransition: NSObject, RePresentTransitionAnimator {
+class RePresentScaleTransition: NSObject, RePresentTwoStepTransition {
     var state = RePresentTransitionState.presented
+    var snapshot: UIView?
+    var presentedFrame = CGRect.zero
     
-    func animateDismiss(using ctx: UIViewControllerContextTransitioning, done: @escaping (Bool) -> Void) {
+    func performInitial(using: UIViewControllerContextTransitioning) {
     }
     
-    func animatePresent(using ctx: UIViewControllerContextTransitioning, done: @escaping (Bool) -> Void) {
+    func performFinal(using: UIViewControllerContextTransitioning) {
     }
     
-    func dismissDuration(using: UIViewControllerContextTransitioning) -> TimeInterval {
-        return 0
-    }
-    
-    func presentDuration(using: UIViewControllerContextTransitioning) -> TimeInterval {
-        return 1
+    func duration(using: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return state == .dismissing || state == .dismissed ? 0 : 1
     }
 }

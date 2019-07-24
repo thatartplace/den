@@ -14,21 +14,3 @@ protocol RePresentTransition: AnyObject {
     func perform(using: UIViewControllerContextTransitioning)
     func duration(using: UIViewControllerContextTransitioning?) -> TimeInterval
 }
-
-extension RePresentTransition {
-    typealias TransitionContextKeys = (
-        presentingView: UITransitionContextViewKey,
-        presentedView: UITransitionContextViewKey,
-        presentingViewController: UITransitionContextViewControllerKey,
-        presentedViewController: UITransitionContextViewControllerKey
-    )
-    
-    var keys: TransitionContextKeys {
-        return (
-            presentingView: state == .presenting ? .from : .to,
-            presentedView: state == .dismissing ? .from : .to,
-            presentingViewController: state == .presenting ? .from : .to,
-            presentedViewController: state == .dismissing ? .from : .to
-        )
-    }
-}

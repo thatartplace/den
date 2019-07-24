@@ -44,18 +44,10 @@ class RePresentContext: NSObject {
 
 extension RePresentContext: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard transition?.state ?== .presented else {
-            return nil
-        }
-        transition?.state = .dismissing
         return self
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard transition?.state ?== .dismissed else {
-            return nil
-        }
-        transition?.state = .presenting
         return self
     }
 }
