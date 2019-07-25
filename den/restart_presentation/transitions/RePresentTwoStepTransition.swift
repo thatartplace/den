@@ -3,7 +3,11 @@
 import UIKit
 
 protocol RePresentTwoStepTransition: RePresentTransition {
+    /// configure relevant views and view controllers to their states at the beginning
+    /// of the transition
     func performInitial(using: UIViewControllerContextTransitioning)
+    /// configure relevant views and view controllers to their states at the end of the
+    /// transition
     func performFinal(using: UIViewControllerContextTransitioning)
 }
 

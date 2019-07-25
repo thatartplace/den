@@ -15,6 +15,9 @@ enum RePresentTransitionInput {
     case cancel
 }
 
+/// a fsm with 6 states and 3 inputs. the state and cancelled properties together
+/// form 8 possible states but only 6 are valid. it's up to the implementations
+/// to call the transition function
 protocol RePresentTransition: AnyObject {
     var state: RePresentTransitionState { get set }
     var cancelled: Bool { get set }

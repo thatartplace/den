@@ -3,7 +3,7 @@
 import UIKit
 
 extension UIViewController {
-    // invariant: first in, first used (dismissed & present), first out
+    /// invariant: first in, first used (dismissed & present), first out
     private static var queues: [UIViewController: [RePresentContext]] = [:]
     
     /// first dismiss, then present the presented view controller. if the callee isn't
