@@ -13,6 +13,7 @@
 		2B0C6DA8228FDEEA00CA40BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C6DA6228FDEEA00CA40BD /* LaunchScreen.storyboard */; };
 		2B0C6DB3228FDEEA00CA40BD /* denTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6DB2228FDEEA00CA40BD /* denTests.swift */; };
 		2B0C6DBE228FDEEA00CA40BD /* denUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C6DBD228FDEEA00CA40BD /* denUITests.swift */; };
+		2B26535222F36FC300C10D06 /* CustomFramePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26535122F36FC300C10D06 /* CustomFramePresentation.swift */; };
 		2B3317AA22CD2644007D58A1 /* RePresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317A922CD2644007D58A1 /* RePresentViewController.swift */; };
 		2B3317AF22CD433C007D58A1 /* TestTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317AE22CD433C007D58A1 /* TestTransitionDelegate.swift */; };
 		2B3317B122CD43B1007D58A1 /* TestTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3317B022CD43B1007D58A1 /* TestTransitionViewController.swift */; };
@@ -35,6 +36,8 @@
 		2B847E4022CE72BC00004851 /* RePresentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B847E3F22CE72BC00004851 /* RePresentContext.swift */; };
 		2B8802172294771B00EBC3F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8802162294771B00EBC3F4 /* Main.storyboard */; };
 		2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880219229477E000EBC3F4 /* SpinVC.swift */; };
+		2BA2B31122F0C03E00095862 /* CustomSheetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2B31022F0C03E00095862 /* CustomSheetPresentation.swift */; };
+		2BA2B31722F1084D00095862 /* CustomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2B31622F1084D00095862 /* CustomSheetViewController.swift */; };
 		2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */; };
 		2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */; };
 		2BAF20F02295E21A00CFC04E /* ViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */; };
@@ -77,6 +80,7 @@
 		2B0C6DB9228FDEEA00CA40BD /* denUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = denUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0C6DBD228FDEEA00CA40BD /* denUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = denUITests.swift; sourceTree = "<group>"; };
 		2B0C6DBF228FDEEA00CA40BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B26535122F36FC300C10D06 /* CustomFramePresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFramePresentation.swift; sourceTree = "<group>"; };
 		2B3317A922CD2644007D58A1 /* RePresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentViewController.swift; sourceTree = "<group>"; };
 		2B3317AE22CD433C007D58A1 /* TestTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionDelegate.swift; sourceTree = "<group>"; };
 		2B3317B022CD43B1007D58A1 /* TestTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		2B847E3F22CE72BC00004851 /* RePresentContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentContext.swift; sourceTree = "<group>"; };
 		2B8802162294771B00EBC3F4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2B880219229477E000EBC3F4 /* SpinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinVC.swift; sourceTree = "<group>"; };
+		2BA2B31022F0C03E00095862 /* CustomSheetPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetPresentation.swift; sourceTree = "<group>"; };
+		2BA2B31622F1084D00095862 /* CustomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetViewController.swift; sourceTree = "<group>"; };
 		2BAF20E522959FB800CFC04E /* CATransformLayer+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransformLayer+Rotation.swift"; sourceTree = "<group>"; };
 		2BAF20E72295A88D00CFC04E /* CALayer+fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+fit.swift"; sourceTree = "<group>"; };
 		2BAF20EF2295E21A00CFC04E /* ViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNib.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		2B0C6D9C228FDEEA00CA40BD /* den */ = {
 			isa = PBXGroup;
 			children = (
+				2BA2B30F22F0C00300095862 /* custom_frame_presentation */,
 				2B74DD5322D67E0D008E7E3E /* fsm */,
 				2B3317AD22CD4328007D58A1 /* test_transition */,
 				2BBB824F22CCED66008B7985 /* restart_presentation */,
@@ -273,6 +280,16 @@
 				2B880219229477E000EBC3F4 /* SpinVC.swift */,
 			);
 			path = Spin;
+			sourceTree = "<group>";
+		};
+		2BA2B30F22F0C00300095862 /* custom_frame_presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2B26535122F36FC300C10D06 /* CustomFramePresentation.swift */,
+				2BA2B31022F0C03E00095862 /* CustomSheetPresentation.swift */,
+				2BA2B31622F1084D00095862 /* CustomSheetViewController.swift */,
+			);
+			path = custom_frame_presentation;
 			sourceTree = "<group>";
 		};
 		2BAF20E022959E9400CFC04E /* CA_utils */ = {
@@ -468,6 +485,7 @@
 				2B0B1F1822B7C7F90088514F /* ImageFramingVC.swift in Sources */,
 				2BB3EDBD22E8D45400B5AD11 /* UIViewControllerContextTransitioning+frame.swift in Sources */,
 				2B4EA51922CFD07D00DC6F6A /* UIViewController+rePresent.swift in Sources */,
+				2BA2B31722F1084D00095862 /* CustomSheetViewController.swift in Sources */,
 				2B847E4022CE72BC00004851 /* RePresentContext.swift in Sources */,
 				2B3317AA22CD2644007D58A1 /* RePresentViewController.swift in Sources */,
 				2BE3399522E6756900095D0C /* RePresentTransition.swift in Sources */,
@@ -478,12 +496,14 @@
 				2B56899F22B2A95200EF2E31 /* Pixel.swift in Sources */,
 				2B81543F22AAC1EC006063B4 /* CGFloat_coercion.swift in Sources */,
 				2B3317B322CD44D2007D58A1 /* TestTransitionSegue.swift in Sources */,
+				2B26535222F36FC300C10D06 /* CustomFramePresentation.swift in Sources */,
 				2B51296622A37ABE007E824E /* ++--.swift in Sources */,
 				2B56899722B29FD900EF2E31 /* ImageFramingView.swift in Sources */,
 				2B51296D22A37D07007E824E /* CardsLayout.swift in Sources */,
 				2B49031422E8205300238B46 /* RePresentScaleTransition.swift in Sources */,
 				2BAF20E622959FB800CFC04E /* CATransformLayer+Rotation.swift in Sources */,
 				2B56899922B2A14D00EF2E31 /* ImageFramingOptions.swift in Sources */,
+				2BA2B31122F0C03E00095862 /* CustomSheetPresentation.swift in Sources */,
 				2B56899D22B2A93400EF2E31 /* ImageBitmap.swift in Sources */,
 				2BAF20E82295A88D00CFC04E /* CALayer+fit.swift in Sources */,
 			);
