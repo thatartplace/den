@@ -48,6 +48,7 @@
 		2BD271CF22AE8DDE000291A3 /* SafariTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD271CE22AE8DDE000291A3 /* SafariTestVC.swift */; };
 		2BDB225222A8150200ACD21D /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB225122A8150200ACD21D /* CardsCell.swift */; };
 		2BE3399522E6756900095D0C /* RePresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE3399422E6756900095D0C /* RePresentTransition.swift */; };
+		2BF0F4D522F4E2DF00FB7B54 /* UIView.AnimationCurve+animationOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0F4D422F4E2DF00FB7B54 /* UIView.AnimationCurve+animationOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		2BD271CE22AE8DDE000291A3 /* SafariTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariTestVC.swift; sourceTree = "<group>"; };
 		2BDB225122A8150200ACD21D /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		2BE3399422E6756900095D0C /* RePresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePresentTransition.swift; sourceTree = "<group>"; };
+		2BF0F4D422F4E2DF00FB7B54 /* UIView.AnimationCurve+animationOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView.AnimationCurve+animationOption.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		2B0C6D9C228FDEEA00CA40BD /* den */ = {
 			isa = PBXGroup;
 			children = (
+				2BF0F4D322F4E2A900FB7B54 /* UIView_utils */,
 				2BA2B30F22F0C00300095862 /* custom_frame_presentation */,
 				2B74DD5322D67E0D008E7E3E /* fsm */,
 				2B3317AD22CD4328007D58A1 /* test_transition */,
@@ -339,6 +342,14 @@
 			path = SFSafariViewController;
 			sourceTree = "<group>";
 		};
+		2BF0F4D322F4E2A900FB7B54 /* UIView_utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BF0F4D422F4E2DF00FB7B54 /* UIView.AnimationCurve+animationOption.swift */,
+			);
+			path = UIView_utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,6 +492,7 @@
 				2B51296B22A37CE1007E824E /* CardsViewController.swift in Sources */,
 				2B51296322A372CE007E824E /* repeat_extensions.swift in Sources */,
 				2B56899B22B2A91800EF2E31 /* Bitmap.swift in Sources */,
+				2BF0F4D522F4E2DF00FB7B54 /* UIView.AnimationCurve+animationOption.swift in Sources */,
 				2B88021A229477E000EBC3F4 /* SpinVC.swift in Sources */,
 				2B0B1F1822B7C7F90088514F /* ImageFramingVC.swift in Sources */,
 				2BB3EDBD22E8D45400B5AD11 /* UIViewControllerContextTransitioning+frame.swift in Sources */,

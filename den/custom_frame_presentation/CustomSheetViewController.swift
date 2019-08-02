@@ -25,6 +25,10 @@ class CustomSheetViewController: UIViewController {
             p.layoutPresented(animated: true)
         }
     }
+    
+    @IBAction func endEditing(_ sender: UITextField) {
+        sender.endEditing(true)
+    }
 }
 
 extension CustomSheetViewController: UIViewControllerTransitioningDelegate {

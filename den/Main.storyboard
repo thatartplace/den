@@ -442,14 +442,26 @@
                                     <action selector="change:" destination="HX1-ef-zH6" eventType="valueChanged" id="EhZ-xZ-3dy"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ssb-vi-Avu">
+                                <rect key="frame" x="16" y="491" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="endEditing:" destination="HX1-ef-zH6" eventType="primaryActionTriggered" id="F0i-Af-sLs"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2Y3-Vj-35h" firstAttribute="centerX" secondItem="37d-mc-QbX" secondAttribute="centerX" id="5C6-WK-8z7"/>
+                            <constraint firstItem="ssb-vi-Avu" firstAttribute="leading" secondItem="UfF-Y8-b0u" secondAttribute="leading" constant="16" id="5zS-c7-zJb"/>
                             <constraint firstItem="UfF-Y8-b0u" firstAttribute="trailing" secondItem="btp-uh-Bjp" secondAttribute="trailing" constant="16" id="DBS-zT-wnx"/>
                             <constraint firstItem="2Y3-Vj-35h" firstAttribute="centerY" secondItem="37d-mc-QbX" secondAttribute="centerY" id="EKj-ms-5rY"/>
+                            <constraint firstItem="ssb-vi-Avu" firstAttribute="top" secondItem="btp-uh-Bjp" secondAttribute="bottom" constant="20" id="OYR-cE-KSI"/>
                             <constraint firstItem="btp-uh-Bjp" firstAttribute="leading" secondItem="UfF-Y8-b0u" secondAttribute="leading" constant="16" id="SZ5-RP-RCG"/>
                             <constraint firstItem="btp-uh-Bjp" firstAttribute="top" secondItem="2Y3-Vj-35h" secondAttribute="bottom" constant="20" id="lN2-8q-H1M"/>
+                            <constraint firstItem="UfF-Y8-b0u" firstAttribute="trailing" secondItem="ssb-vi-Avu" secondAttribute="trailing" constant="16" id="vac-Lj-K3L"/>
                             <constraint firstItem="btp-uh-Bjp" firstAttribute="centerX" secondItem="37d-mc-QbX" secondAttribute="centerX" id="yxm-lB-x73"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UfF-Y8-b0u"/>

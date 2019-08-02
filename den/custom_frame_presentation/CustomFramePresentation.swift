@@ -22,11 +22,11 @@ class CustomFramePresentation: UIPresentationController {
         savedFrame = nil
     }
     
-    func layoutPresented(animated: Bool) {
+    func layoutPresented(animated: Bool, duration: TimeInterval = 1, options: UIView.AnimationOptions = []) {
         if animated {
-            UIView.animate(withDuration: 1) {
+            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
                 self.presentedView?.frame = self.frameOfPresentedViewInContainerView
-            }
+            })
         }
         else {
             presentedView?.frame = frameOfPresentedViewInContainerView
@@ -44,7 +44,7 @@ class CustomFramePresentation: UIPresentationController {
         invalidateFrame()
     }
     
-    final override var frameOfPresentedViewInContainerView: CGRect {
+    override var frameOfPresentedViewInContainerView: CGRect {
         if let saved = savedFrame {
             return saved
         }
